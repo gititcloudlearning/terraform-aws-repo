@@ -1,15 +1,15 @@
-
-
 terraform {
   required_providers {
-    github = {
-      source = "integrations/github"
-      version = "4.28.0"
+    aws = {
+      source  = "hashicorp/aws"
+      version = "4.25.0"
     }
   }
 }
 
-provider "github" {
-  token = "${var.token}"
+provider "aws" {
+  region     = "us-east-1"
+  access_key = var.access_key
+  secret_key = var.secret_key
 }
 
